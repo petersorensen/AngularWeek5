@@ -27,7 +27,7 @@ function MenuService($http, $interpolate, $q, ApiPath) {
   };
 
   service.getDish = function (short_name) {
-    var exp = $interpolate('/menu_items/{{short_name}}.json', false, null, true),
+    var exp = $interpolate('/menu_items/{{short_name.toUpperCase()}}.json', false, null, true),
         url = exp({ short_name: short_name});
 
     return $http
